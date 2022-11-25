@@ -1,0 +1,39 @@
+{
+  "name": "typescript-aws-lambda-serverless-restapi-kit",
+  "version": "1.0.0",
+  "description": "aws lambda serverless kit for NodeJS v18, TypeScript",
+  "repository": "https://github.com/DevSazal",
+  "author": "SAM CLI & DevSazal",
+  "license": "MIT",
+  "scripts": {
+    "unit": "jest",
+    "lint": "eslint '*.ts' --quiet --fix",
+    "compile": "tsc",
+    "test": "npm run compile && npm run unit"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.799.0",
+    "esbuild": "^0.14.54"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.108",
+    "@types/jest": "^29.2.0",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "esbuild-jest": "^0.5.0",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.2",
+    "jest": "^29.2.1",
+    "prettier": "^2.5.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "make lint"
+    }
+  }
+}
