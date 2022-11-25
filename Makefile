@@ -43,6 +43,10 @@ help:
 ####
 
 #### validate
+i:
+	@npm i
+
+#### validate
 validate:
 	@sam validate -t serverless.yml --profile sazal-dev
 
