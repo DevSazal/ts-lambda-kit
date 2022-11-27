@@ -43,6 +43,9 @@ const main = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult>
         case 'PATCH /users/{id}':
             return patchUser(data as IRequestDataPatchUser);
 
+        case 'PATCH /users/{id}':
+            return deleteUser(data as IRequestDataDeleteUser);
+
         default:
             return {
                 statusCode: 404,
@@ -61,6 +64,8 @@ enum EState {
     inactive = 'inactive',
 }
 
+// users request interface
+
 interface IRequestDataPostUser {
     id: number;
     firstName: string;
@@ -77,6 +82,10 @@ interface IRequestDataPatchUser {
     firstName: string;
     lastName: string;
     state?: EState.active | EState.disabled;
+}
+
+interface IRequestDataDeleteUser {
+    id: number;
 }
 
 const postUser = async (request: IRequestDataPostUser) => {
@@ -111,6 +120,15 @@ const patchUser = async (request: IRequestDataPatchUser) => {
         statusCode: 200,
         body: JSON.stringify({
             message: `PATCH /v1/users/${request.id} accepted`,
+        }),
+    };
+};
+
+const deleteUser = async (request: IRequestDataDeleteUser) => {
+    return {
+        statusCode: 200,
+        body: JSON.stringify({
+            message: `DELETE /v1/users/${request.id} accepted`,
         }),
     };
 };

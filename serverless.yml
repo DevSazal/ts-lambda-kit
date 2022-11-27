@@ -59,6 +59,13 @@ Resources:
             Method: PATCH
             RestApiId:
               Ref: RestApiGateway
+        ApiGatewayRouteDeleteUser:
+          Type: Api
+          Properties:
+            Path: /users/{id}
+            Method: DELETE
+            RestApiId:
+              Ref: RestApiGateway
     Metadata: # Manage esbuild properties
       BuildMethod: esbuild
       BuildProperties:
