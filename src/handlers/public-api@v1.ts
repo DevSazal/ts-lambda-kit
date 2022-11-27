@@ -40,6 +40,9 @@ const main = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult>
         case 'GET /users/{id}':
             return getUserById(data as IRequestDataGetUserById);
 
+        case 'PATCH /users/{id}':
+            return patchUser(data as IRequestDataPatchUser);
+
         default:
             return {
                 statusCode: 404,
@@ -69,6 +72,13 @@ interface IRequestDataGetUserById {
     id: number;
 }
 
+interface IRequestDataPatchUser {
+    id: number;
+    firstName: string;
+    lastName: string;
+    state?: EState.active | EState.disabled;
+}
+
 const postUser = async (request: IRequestDataPostUser) => {
     return {
         statusCode: 200,
@@ -92,6 +102,15 @@ const getUserById = async (request: IRequestDataGetUserById) => {
         statusCode: 200,
         body: JSON.stringify({
             message: `GET /v1/users/${request.id} accepted`,
+        }),
+    };
+};
+
+const patchUser = async (request: IRequestDataPatchUser) => {
+    return {
+        statusCode: 200,
+        body: JSON.stringify({
+            message: `PATCH /v1/users/${request.id} accepted`,
         }),
     };
 };

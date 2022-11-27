@@ -52,6 +52,13 @@ Resources:
             Method: GET
             RestApiId:
               Ref: RestApiGateway
+        ApiGatewayRoutePatchUser:
+          Type: Api
+          Properties:
+            Path: /users/{id}
+            Method: PATCH
+            RestApiId:
+              Ref: RestApiGateway
     Metadata: # Manage esbuild properties
       BuildMethod: esbuild
       BuildProperties:

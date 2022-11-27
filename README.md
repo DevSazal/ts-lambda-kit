@@ -1,5 +1,6 @@
 # typescript-aws-lambda-serverless-restapi-kit
-
+### `Quick-start Kit` for aws sam Lambda 
+<br />
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
 - `src` - Code for the application's Lambda function written in TypeScript.
@@ -17,7 +18,11 @@ To use the SAM CLI, you need the following tools.
 
 * SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
 * Node.js - [Install Node.js 18](https://nodejs.org/en/), including the NPM package management tool.
-* Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community)
+* Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community) optional.
+
+#### setup note
+
+install `awscliv2`, `aws-sam-cli`, `nodejs 18` (and `make` only for macOS and Linux) on your machine and ensure that your aws iam account configured. the configuration profile should be located at `~/.aws/config`, access credentials should be located at `~/.aws/credentials`.
 
 To build and deploy your application for the first time, run the following in your shell using `makefile`:
 
@@ -52,7 +57,7 @@ Test a single function by invoking it directly with a test event. An event is a 
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-typescript-aws-lambda-serverless-restapi-kit$ sam local invoke HelloWorldFunction --event events/event.json
+typescript-aws-lambda-serverless-restapi-kit$ sam local invoke {lambda-function-name} --event events/event.json
 ```
 
 The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.
@@ -85,14 +90,14 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 `NOTE`: This command works for all AWS Lambda functions; not just the ones you deploy using SAM.
 
 ```bash
-typescript-aws-lambda-serverless-restapi-kit$ sam logs -n HelloWorldFunction --stack-name typescript-aws-lambda-serverless-restapi-kit --tail
+typescript-aws-lambda-serverless-restapi-kit$ sam logs -n {lambda-function-name} --stack-name typescript-aws-lambda-serverless-restapi-kit --tail
 ```
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
 
 ## Unit tests
 
-Tests are defined in the `hello-world/tests` folder in this project. Use NPM to install the [Jest test framework](https://jestjs.io/) and run unit tests.
+Tests are defined in the `__tests__` folder in this project. Use NPM to install the [Jest test framework](https://jestjs.io/) and run unit tests.
 
 ```bash
 typescript-aws-lambda-serverless-restapi-kit$ npm install
