@@ -1,4 +1,5 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
+import { response } from '../lib/HttpResponse';
 
 /**
  *
@@ -43,14 +44,11 @@ const main = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult>
         case 'PATCH /users/{id}':
             return patchUser(data as IRequestDataPatchUser);
 
-        case 'PATCH /users/{id}':
+        case 'DELETE /users/{id}':
             return deleteUser(data as IRequestDataDeleteUser);
 
         default:
-            return {
-                statusCode: 404,
-                body: 'resource not found.',
-            };
+            return response(404, 'resource not found!');
     }
 
     // All log statements are written to AWS CloudWatch
@@ -89,39 +87,19 @@ interface IRequestDataDeleteUser {
 }
 
 const postUser = async (request: IRequestDataPostUser) => {
-    return {
-        statusCode: 200,
-        body: JSON.stringify({
-            message: `POST /v1/users accepted => hello ${request.firstName}`,
-        }),
-    };
+    return response(201, `POST /v1/users accepted => hello ${request.firstName}`);
 };
 
 const getUsers = async () => {
-    return {
-        statusCode: 200,
-        body: JSON.stringify({
-            message: `GET /v1/users accepted`,
-        }),
-    };
+    return response(`GET /v1/users accepted`);
 };
 
 const getUserById = async (request: IRequestDataGetUserById) => {
-    return {
-        statusCode: 200,
-        body: JSON.stringify({
-            message: `GET /v1/users/${request.id} accepted`,
-        }),
-    };
+    return response({ message: `GET /v1/users/${request.id} accepted` });
 };
 
 const patchUser = async (request: IRequestDataPatchUser) => {
-    return {
-        statusCode: 200,
-        body: JSON.stringify({
-            message: `PATCH /v1/users/${request.id} accepted`,
-        }),
-    };
+    return response(200, { message: `PATCH /v1/users/${request.id} accepted` });
 };
 
 const deleteUser = async (request: IRequestDataDeleteUser) => {
