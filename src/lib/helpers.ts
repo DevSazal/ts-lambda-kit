@@ -7,3 +7,21 @@ import { randomUUID } from 'crypto';
 export const UUID = async (): Promise<string> => {
     return randomUUID();
 };
+
+/**
+ * To escape html special characters by converting string
+ * @param {string} str - string value
+ * @return {string} - safe string value
+ */
+export const escapeHtmlSpecialChars = async (str: string) => {
+    const chars: { [key: string]: string } = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;',
+    };
+
+    const matcher = new RegExp(`[${Object.keys(chars)}]`, 'g');
+    return str.replace(matcher, (s) => chars[s]);
+};
