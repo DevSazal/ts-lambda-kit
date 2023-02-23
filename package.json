@@ -1,10 +1,20 @@
 {
-  "name": "typescript-aws-lambda-serverless-restapi-kit",
+  "name": "ts-lambda-kit",
   "version": "1.0.0",
-  "description": "aws lambda serverless kit for NodeJS v18, TypeScript",
-  "repository": "https://github.com/DevSazal",
-  "author": "SAM CLI & DevSazal",
-  "license": "MIT",
+  "description": "aws lambda kit for making backend with NodeJS v18, TypeScript & SAM CLI",
+  "keywords": [
+    "ts-lambda-kit"
+  ],
+  "author": "Sazal Ahamed <sazal836@gmail.com> (https://sazal.vercel.app)",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevSazal/ts-lambda-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DevSazal/ts-lambda-kit/issues"
+  },
+  "homepage": "https://github.com/DevSazal/ts-lambda-kit#readme",
   "scripts": {
     "unit": "jest",
     "lint": "eslint '*.ts' --quiet --fix",
