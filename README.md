@@ -1,11 +1,11 @@
-# typescript-aws-lambda-serverless-restapi-kit
-### `Quick-start Kit` for aws sam Lambda 
+# `ts-lambda-kit`
+#### A quick-start kit to Build REST API's using Typescript, AWS Lambda & SAM CLI.
 <br />
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
 - `src` - Code for the application's Lambda function written in TypeScript.
 - `events` - Invocation events that you can use to invoke the function.
-- `__tests__` - Unit tests for the application code. 
+- `__tests__` - Unit tests for the application code.
 - `serverless.yml` - A template that defines the application's AWS resources.
 
 The application uses several AWS resources, including Lambda functions and an API Gateway API. These resources are defined in the `serverless.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
