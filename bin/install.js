@@ -52,7 +52,7 @@ async function main() {
         execSync('npx rimraf ./.git'); // delete .git folder
 
         fs.unlinkSync(path.join(projectPath, 'bin', 'install.js'));
-        fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
+        fs.rmSync(path.join(projectPath, 'bin'), { recursive: true });
 
         // end notes
         console.log('\n');
@@ -63,6 +63,7 @@ async function main() {
         console.log(`    cd ${projectName}`);
         console.log();
         console.log('Enjoy your typescript lambda app, which will provide you some ready-made features!');
+        console.log('🎉 Tada...');
         console.log();
     } catch (error) {
         console.log(error);
