@@ -1,10 +1,10 @@
-.PHONY: build build_cloudformation build_typescript clean clean_cache clean_dist clean_modules clean_tmp deploy deployci deploy_cloudformation destroy destroy_cloudformation lint lintfix 
+.PHONY: build build_cloudformation build_typescript clean clean_cache clean_dist clean_modules clean_tmp deploy deployci deploy_cloudformation destroy destroy_cloudformation lint lintfix
 
 #### input params
 debug = debug
 maintenance = false
 region = eu-central-1
-stack = typescript-aws-lambda-serverless-restapi-kit
+stack = typescript-aws-lambda-serverless-restapi-kit # decide a stack-name for the app
 stage = v1
 substage = sazal # x/developer-name
 tests = unit
@@ -57,7 +57,7 @@ build_cloudformation:
 	@sam build -b .aws-sam/build -t serverless.yml \
 		--cached \
 		--cache-dir .cache \
-		--parallel 
+		--parallel
 
 build_typescript:
 	@npx --no-install tsc

@@ -15,6 +15,7 @@
     "url": "https://github.com/DevSazal/ts-lambda-kit/issues"
   },
   "homepage": "https://github.com/DevSazal/ts-lambda-kit#readme",
+  "bin": "bin/install.js",
   "scripts": {
     "unit": "jest",
     "lint": "eslint '*.ts' --quiet --fix",
@@ -31,6 +32,7 @@
     "@types/node": "^18.11.9",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
+    "colors": "^1.4.0",
     "esbuild-jest": "^0.5.0",
     "eslint": "^8.8.0",
     "eslint-config-prettier": "^8.3.0",
