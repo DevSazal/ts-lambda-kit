@@ -1,6 +1,44 @@
 # `ts-lambda-kit`
+
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
+
 #### A quick-start kit to Build REST API's using Typescript, AWS Lambda & SAM CLI.
+
+
+By running single command, you will get a `production-ready` [TypeScript](https://typescriptlang.org) lambda application and fully configured on your machine. Our goal is to provide you with a very cool, opinionated architecture. It will provide you with things like generic functionalities for the [lambda](https://docs.aws.amazon.com/lambda/) function and cool request handling support with [Amazon API Gateway](https://aws.amazon.com/api-gateway/), [AWS CloudFormation](https://aws.amazon.com/cloudformation/), and [Amazon DynamoDB](https://aws.amazon.com/dynamodb/).
+
+It makes things very easy when the question comes with build, and deploy. It has a strong focus on making sure everything is developer-friendly.
+
+
+### Requirements:
+
+* Node.js - [Install Node.js 18](https://nodejs.org/en/)
+* NPM
+* TypeScript
+* Git
+* SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
+* Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community) optional.
+
+
+## Quick Installation
+
+To create a project, simply run:
+
+```bash
+npx ts-lambda-kit <project-name>
+```
+
+or
+
+```bash
+npm init ts-lambda-kit <project-name>
+```
+
+#### 🥇 Cool! You are ready to make your amazing product.
+#### 🎯 I know you liked it. Please, give a star to the [repository](https://github.com/DevSazal/ts-lambda-kit.git)
 <br />
+
+## Architecture
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
 
 - `src` - Code for the application's Lambda function written in TypeScript.
@@ -10,21 +48,11 @@ This project contains source code and supporting files for a serverless applicat
 
 The application uses several AWS resources, including Lambda functions and an API Gateway API. These resources are defined in the `serverless.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
 
-## Deploy the sample application
+## Developer Guide
 
-The Serverless Application Model Command Line Interface (SAM CLI) is an extension of the AWS CLI that adds functionality for building and testing Lambda applications. It uses Docker to run your functions in an Amazon Linux environment that matches Lambda. It can also emulate your application's build environment and API.
+install `awscliv2`, `aws-sam-cli`, `nodejs 18` (and `make` only for macOS and Linux) on your machine and ensure that your aws iam account is configured. the configuration profile should be located at `~/.aws/config`, access credentials should be located at `~/.aws/credentials`.
 
-To use the SAM CLI, you need the following tools.
-
-* SAM CLI - [Install the SAM CLI](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html)
-* Node.js - [Install Node.js 18](https://nodejs.org/en/), including the NPM package management tool.
-* Docker - [Install Docker community edition](https://hub.docker.com/search/?type=edition&offering=community) optional.
-
-#### setup note
-
-install `awscliv2`, `aws-sam-cli`, `nodejs 18` (and `make` only for macOS and Linux) on your machine and ensure that your aws iam account configured. the configuration profile should be located at `~/.aws/config`, access credentials should be located at `~/.aws/credentials`.
-
-To build and deploy your application for the first time, run the following in your shell using `makefile`:
+To build and deploy your application for the first time, run the following commands in your shell using `makefile` (only for macOS and Linux):
 
 ```bash
 make i
@@ -47,7 +75,7 @@ You can find your API Gateway Endpoint URL in the output values displayed after 
 Build your application with the `make build` command.
 
 ```bash
-typescript-aws-lambda-serverless-restapi-kit$ make build
+ts-lambda-kit$ make build
 ```
 
 The SAM CLI installs dependencies defined in `package.json`, compiles TypeScript with esbuild, creates a deployment package, and saves it in the `.aws-sam/build` folder.
@@ -57,14 +85,14 @@ Test a single function by invoking it directly with a test event. An event is a 
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-typescript-aws-lambda-serverless-restapi-kit$ sam local invoke {lambda-function-name} --event events/event.json
+ts-lambda-kit$ sam local invoke {lambda-function-name} --event events/event.json
 ```
 
 The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.
 
 ```bash
-typescript-aws-lambda-serverless-restapi-kit$ sam local start-api
-typescript-aws-lambda-serverless-restapi-kit$ curl http://localhost:3000/
+ts-lambda-kit$ sam local start-api
+ts-lambda-kit$ curl http://localhost:3000/
 ```
 
 The SAM CLI reads the application template to determine the API's routes and the functions that they invoke. The `Events` property on each function's definition includes the route and method for each path.
@@ -90,7 +118,7 @@ To simplify troubleshooting, SAM CLI has a command called `sam logs`. `sam logs`
 `NOTE`: This command works for all AWS Lambda functions; not just the ones you deploy using SAM.
 
 ```bash
-typescript-aws-lambda-serverless-restapi-kit$ sam logs -n {lambda-function-name} --stack-name typescript-aws-lambda-serverless-restapi-kit --tail
+ts-lambda-kit$ sam logs -n {lambda-function-name} --stack-name typescript-aws-lambda-serverless-restapi-kit --tail
 ```
 
 You can find more information and examples about filtering Lambda function logs in the [SAM CLI Documentation](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-logging.html).
@@ -100,8 +128,8 @@ You can find more information and examples about filtering Lambda function logs 
 Tests are defined in the `__tests__` folder in this project. Use NPM to install the [Jest test framework](https://jestjs.io/) and run unit tests.
 
 ```bash
-typescript-aws-lambda-serverless-restapi-kit$ npm install
-typescript-aws-lambda-serverless-restapi-kit$ npm run test
+ts-lambda-kit$ npm install
+ts-lambda-kit$ npm run test
 ```
 
 ## Cleanup
@@ -117,3 +145,7 @@ make destroy
 See the [AWS SAM developer guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) for an introduction to SAM specification, the SAM CLI, and serverless application concepts.
 
 Next, you can use AWS Serverless Application Repository to deploy ready to use Apps that go beyond hello world samples and learn how authors developed their applications: [AWS Serverless Application Repository main page](https://aws.amazon.com/serverless/serverlessrepo/)
+
+## License
+
+ISC © 2023
