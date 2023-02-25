@@ -9,8 +9,8 @@ if (process.argv.length < 3) {
     console.log('You have to provide a name for your lambda backend app.');
     console.log('For example :');
     console.log('    npx ts-lambda-kit my-app');
-    console.log('    OR');
-    console.log('    npm init ts-lambda-kit my-app');
+    // console.log('    OR');
+    // console.log('    npm init ts-lambda-kit my-app');
     process.exit(1);
 }
 
