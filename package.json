@@ -15,7 +15,9 @@
     "url": "https://github.com/DevSazal/ts-lambda-kit/issues"
   },
   "homepage": "https://github.com/DevSazal/ts-lambda-kit#readme",
-  "bin": "bin/install.js",
+  "bin": {
+    "ts-lambda-kit": "bin/install.js"
+  },
   "scripts": {
     "unit": "jest",
     "lint": "eslint '*.ts' --quiet --fix",
