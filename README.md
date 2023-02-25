@@ -28,11 +28,6 @@ To create a project, simply run:
 npx ts-lambda-kit <project-name>
 ```
 
-or
-
-```bash
-npm init ts-lambda-kit <project-name>
-```
 
 #### 🥇 Cool! You are ready to make your amazing product.
 #### 🎯 I know you liked it. Please, give a star to the [repository](https://github.com/DevSazal/ts-lambda-kit.git)
