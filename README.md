@@ -1,6 +1,7 @@
 # `ts-lambda-kit`
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
+[![npm version](https://badge.fury.io/js/ts-lambda-kit.svg)](https://badge.fury.io/js/ts-lambda-kit)
 
 #### A quick-start kit to Build REST API's using Typescript, AWS Lambda & SAM CLI.
 
@@ -30,7 +31,7 @@ npx ts-lambda-kit <project-name>
 
 
 #### 🥇 Cool! You are ready to make your amazing product.
-#### 🎯 I know you liked it. Please, give a star to the [repository](https://github.com/DevSazal/ts-lambda-kit.git)
+#### 🎯 I know you liked it. Please, give a star to the [repository](https://github.com/DevSazal/ts-lambda-kit.git) ⭐⭐⭐
 <br />
 
 ## Architecture
@@ -66,7 +67,7 @@ The 2nd command will build the source of your application. The 3rd command will 
 
 You can find your API Gateway Endpoint URL in the output values displayed after deployment.
 
-#### 🎯 For more information, please check out out [details guide](https://github.com/DevSazal/ts-lambda-kit/blob/main/DEVGUIDE.md)
+#### 🎯 For more information, please check out our [details guide](https://github.com/DevSazal/ts-lambda-kit/blob/main/DEVGUIDE.md)
 <br />
 
 ## Key Resources

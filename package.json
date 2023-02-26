@@ -1,6 +1,6 @@
 {
   "name": "ts-lambda-kit",
-  "version": "1.0.2-beta",
+  "version": "1.0.3-beta",
   "description": "aws lambda kit for making backend with NodeJS v18, TypeScript & SAM CLI",
   "keywords": [
     "ts-lambda-kit",
@@ -15,7 +15,12 @@
     "REST API",
     "Opinionated Architecture",
     "Serverless Computing",
-    "AWS Lambda Backend"
+    "AWS Lambda Backend",
+    "ts-lambda",
+    "ts-lambda-api",
+    "lambda",
+    "lambda-template",
+    "lambda-api"
   ],
   "author": "Sazal Ahamed <sazal836@gmail.com> (https://sazal.vercel.app)",
   "license": "ISC",
