@@ -1,9 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  typescript-aws-lambda-serverless-restapi-kit
+  Managed stack with TS Lambda KIT, AWS SAM CLI & TypeScript
 
-  
+# To know more, just visit https://www.npmjs.com/package/ts-lambda-kit
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
   Function:
@@ -72,7 +72,7 @@ Resources:
         Minify: true
         Target: "es2020"
         Sourcemap: true
-        EntryPoints: 
+        EntryPoints:
         - public-api@v1.ts
 
 Outputs:

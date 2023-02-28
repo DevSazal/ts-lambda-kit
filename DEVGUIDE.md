@@ -5,9 +5,12 @@ install `awscliv2`, `aws-sam-cli`, `nodejs 18` (and `make` only for macOS and Li
 To build and deploy your application for the first time, run the following commands in your shell using `makefile` (only for macOS and Linux):
 
 ```bash
-make i
+make install
 make build
 make deploy
+
+# to delete the deployment
+make destroy
 ```
 
 The second command will build the source of your application. The 3rd command will package and deploy your application to AWS, with a series of prompts:

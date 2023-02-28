@@ -2,3 +2,4 @@
 *.yml
 *.json
 *.md
+jest.config.ts
