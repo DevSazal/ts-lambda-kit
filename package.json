@@ -1,6 +1,6 @@
 {
   "name": "ts-lambda-kit",
-  "version": "1.0.3-beta",
+  "version": "1.0.4-beta",
   "description": "aws lambda kit for making backend with NodeJS v18, TypeScript & SAM CLI",
   "keywords": [
     "ts-lambda-kit",

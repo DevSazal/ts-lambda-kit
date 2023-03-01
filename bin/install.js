@@ -53,11 +53,13 @@ async function main() {
 
         fs.unlinkSync(path.join(projectPath, 'bin', 'install.js'));
         fs.rmSync(path.join(projectPath, 'bin'), { recursive: true });
+        fs.unlinkSync(path.join(projectPath, 'events', 'sample-event.json'));
+        fs.unlinkSync(path.join(projectPath, '.npmignore'));
 
         // end notes
         console.log('\n');
         console.log('Installation is now complete!');
-        console.log('This is ready to use.');
+        console.log("You're ready to go...");
         console.log('\n');
         console.log('We suggest that you start by typing:');
         console.log(`    cd ${projectName}`);

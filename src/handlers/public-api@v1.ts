@@ -16,7 +16,7 @@ import { response } from '../lib/HttpResponse';
 | API Handler: AWS Lambda Function
 |--------------------------------------------------------------------------
 | @apiVersion   1.0
-| 
+|
 | Here is where you can define all the endpoints for your application.
 | Enjoy building your API!
 |

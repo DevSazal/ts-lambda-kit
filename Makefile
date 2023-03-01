@@ -1,19 +1,22 @@
 .PHONY: build build_cloudformation build_typescript clean clean_cache clean_dist clean_modules clean_tmp deploy deployci deploy_cloudformation destroy destroy_cloudformation lint lintfix
 
-#### input params
+#### input params for aws cloud
+#### Please change the value as required like region, stack & profile
+
 debug = debug
 maintenance = false
 region = eu-central-1
-stack = typescript-aws-lambda-serverless-restapi-kit # decide a stack-name for the app
+stack = typescript-lambda-backend-app   # decide a <stack-name> for the app
 stage = v1
-substage = sazal # x/developer-name
+substage = sazal   # add x/<DeveloperName>
 tests = unit
 ####
 
 #### cloud params
-profile = sazal-dev
+profile = sazal-dev    # add the name of aws cli configured profile
 stackname = ${stack}
 ####
+
 
 
 #### info
@@ -40,10 +43,12 @@ help:
 	@echo "- lint: lints service."
 	@echo "- lintfix: lint fix service."
 	@echo ""
+	@echo "- test: for testing all the features by jest."
+	@echo ""
 ####
 
 #### validate
-i:
+install:
 	@npm i
 
 #### validate
@@ -65,7 +70,7 @@ build_typescript:
 
 
 #### clean
-clean: clean_cache clean_dist clean_modules clean_tmp
+clean: clean_cache clean_dist clean_modules clean_coverage clean_tmp
 
 clean_cache:
 	@rm -rf .cache
@@ -75,6 +80,9 @@ clean_dist:
 
 clean_modules:
 	# @rm -rf node_modules
+
+clean_coverage:
+	@rm -rf coverage
 
 clean_tmp:
 	@rm -rf .tmp
@@ -121,4 +129,10 @@ lint:
 
 lintfix:
 	@npx --no-install prettier --write '{src,__tests__}/**/*.{js,ts}'
+####
+
+#### Test
+test:
+	@npm run test
+
 ####

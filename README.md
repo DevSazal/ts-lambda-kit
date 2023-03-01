@@ -51,10 +51,22 @@ install `awscliv2`, `aws-sam-cli`, `nodejs 18` (and `make` only for macOS and Li
 To build and deploy your application for the first time, run the following commands in your shell using `makefile` (only for macOS and Linux):
 
 ```bash
-make i
+make install
 make build
+```
+
+Before deployment, open the `Makefile` and add your AWS-configured profile name at the `profile` variable.
+
+Wait, you may try this command on your terminal to check what is the name of your aws-configured profile:
+
+```bash
+aws configure list-profiles
+```
+
+#### Let's make it live:
+
+```bash
 make deploy
-make destroy
 ```
 
 The 2nd command will build the source of your application. The 3rd command will package and deploy your application to AWS, with a series of prompts:
